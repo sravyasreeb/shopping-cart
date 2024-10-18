@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/shimmer.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=favorite" />
+    <link rel="stylesheet" href="./styles/home.css" />
+    <link rel="stylesheet" href="./styles/common.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+</head>
+
+<body>
+    <header class="sticky">
+        <div class="menu-icon">☰</div>
+        <div role="banner" class="header-logo">VENIA</div>
+        <nav class="d-flex h-100 align-items-center">
+            <a href="#home" class="active">Home</a>
+            <a href="#women">Women</a>
+            <a href="#men">men</a>
+            <a href="#smartGear">Smart Gear</a>
+            <a href="#accessories">Accessories</a>
+        </nav>
+        <div class="cart-icon-wrapper d-flex align-items-center justify-content-center">
+            <span class="material-symbols-outlined shopping-cart-icon" cart-badge="10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-shopping-bag">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+            </span>
+        </div>
+    </header>
+    <div class="category-heading-container">
+        <div class="category-heading d-flex flex-direction-column align-items-center justify-content-center">
+            <div class="d-flex d-flex flex-direction-column align-items-center justify-content-center">
+                <div>Men's</div>
+                <div>Outerwear</div>
+            </div>
+            <div class="heading-section-ender"></div>
+        </div>
+        <div class="men-banner-container">
+            <img src="./assets/men.png" class="men-banner h-100 w-100" />
+        </div>
+    </div>
+
+    <div class="main-container d-flex">
+        <aside class="filter-section d-flex flex-direction-column">
+            <div class="global-control-panel text-color">
+                <div class="breadcrumbs">
+                    <span>Clothing</span> / <span>Women's</span> /
+                    <span class="text-color-light">Outerwear</span>
+                </div>
+            </div>
+            <div class="filters-container">
+                <h2 class="filter-label">Filters</h2>
+                <div class="categories-container">
+                    <div class="search-container">
+                        <input type="text" id="search-input" class="search-input" placeholder="Search..." aria-label="Search Input">
+                    </div>
+
+                    <h3 class="font-bold categories-label">Categories</h3>
+
+                    <div class="d-flex flex-direction-column sort-by-category">
+                        <label class="category-item d-flex align-items-center">
+                            <input type="checkbox" class="form-checkbox" value="jewelery" checked/>
+                            <span>Jewellery</span>
+                        </label>
+                        <label class="category-item d-flex align-items-center">
+                            <input type="checkbox" class="form-checkbox" value="electronics" checked/>
+                            <span>Electronics</span>
+                        </label>
+                        <label class="category-item d-flex align-items-center" >
+                            <input type="checkbox" class="form-checkbox"  value="men's clothing" checked/>
+                            <span>Men's Clothing</span>
+                        </label>
+                        <label class="category-item d-flex align-items-center">
+                            <input type="checkbox" class="form-checkbox"  value="women's clothing" checked/>
+                            <span>Women's Clothing</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <section class="product-details-section">
+            <div class="product-header global-control-panel text-color">
+                <div class="d-flex justify-content-space-between">
+                    <div class="d-flex">
+                        <span class="results">0</span>
+                        <span>Results</span>
+                    </div>
+                    <div>
+                        
+                        <select id="price-sort" aria-label="Sort by Price">
+                            <option value="" disabled selected>Sort by Price</option>
+                            <option value="low-to-high">Low to High</option>
+                            <option value="high-to-low">High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <product-list></product-list>
+            <!-- Load more items button -->
+            <div class="load-more-container d-flex justify-content-center">
+                <button class="load-more-btn" id="load-more-btn">
+                    Load More
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <script src="./js/cutom-elements/shimmer-product-item.element.js" defer></script>
+    <script src="./js/cutom-elements/product-item.element.js" defer></script>
+    <script src="./js/cutom-elements/product-list.element.js" defer></script>
+</body>
+
+</html>
